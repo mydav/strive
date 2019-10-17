@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <!--
+        BINGO CHALLENGE!!!
+        Create programmatically (with JS) a BINGO board with 76 cells, from 1 to 76.
+        Create a button to randomize a number from 1 to 76. The same number should be highlighted on the bingo board
+
+        EXTRA:
+        - Take ALWAYS a new number (avoid randoming 10 3 times for example)
+        - Create a USER BOARD with random 24 numbers that highlights as the main board does
+        - Let the user choose HOW MANY user boards he's willing to play with and create them.
+    -->
+    <head>
+    <style>
+      body {
+        background: #edfff2;
+        display: flex;
+        height: 100vh;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+      }
+
+      input[type=button], input[type=submit], input[type=reset] {
+        padding: 6px 12px;
+        border: 2px solid black;
+        border-radius: 8px;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 10px;
+
+      }
+
+      input[type=button]:hover{background-color:orange;}
+
+      input[type=button]:active{background-color:grey;}
+
+      .letters {
+        background: #74fc86;
+      }
+
+      #header {
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      #bingotable {
+        margin: 0 auto;
+        text-align: center;
+        width: 600px;
+        height: 400px;
+        border-collapse: collapse;
+        background: #ffff91;
+      }
+
+      th, td {
+        font-family: Helvetica;
+        margin: 0 auto;
+        text-align: center;
+        border: 3px solid black;
+        width: 15%;
+      }
+
+    </style>
+
+    </head>
+
+
+    <body onload="newCard()">
+
+  	<div id="container">
+      <div id="header">
+        <h1>Stripe Bingo</h1>
+      </div>
+  	<div id="content">
+  		<table id="bingotable">
+  			<tr>
+  				<th class="letters">B</th>
+  				<td id="square0"> &nbsp;</td>
+          <td id="square1"> &nbsp;</td>
+  				<td id="square2"> &nbsp;</td>
+          <td id="square3"> &nbsp;</td>
+          <td id="square4"> &nbsp;</td>
+  			</tr>
+  			<tr>
+          <th class="letters">I</th>
+          <td id="square5"> &nbsp;</td>
+  				<td id="square6"> &nbsp;</td>
+          <td id="square7"> &nbsp;</td>
+          <td id="square8"> &nbsp;</td>
+          <td id="square9"> &nbsp;</td>
+  			</tr>
+  			<tr>
+          <th class="letters">N</th>
+          <td id="square10"> &nbsp;</td>
+          <td id="square11"> &nbsp;</td>
+          <td id="square12"> &nbsp;</td>
+  				<td id="square13"> &nbsp;</td>
+  				<td id="square14"> &nbsp;</td>
+  			</tr>
+  			<tr>
+          <th class="letters">G</th>
+          <td id="square15"> &nbsp;</td>
+          <td id="square16"> &nbsp;</td>
+          <td id="square17"> &nbsp;</td>
+          <td id="square18"> &nbsp;</td>
+          <td id="square19"> &nbsp;</td>
+  			</tr>
+  			<tr>
+
+  			  <th class="letters">O</th>
+          <td id="square20"> &nbsp;</td>
+          <td id="square21"> &nbsp;</td>
+          <td id="square22"> &nbsp;</td>
+          <td id="square23"> &nbsp;</td>
+          <td id="square24"> &nbsp;</td>
+  			</tr>
+
+
+  		</table>
+  	</div>
+
+      <input type="button" value="Generate new card" onclick="anotherCard()">
+
+
+    <script>
+
+      var nums = new Array(76);
+
+  function newCard() {
+  	//Starting loop through each square card
+  	for(var i=0; i < 25; i++) {  //<--always this code for loops. change in red
+  		setSquare(i);
+  	}
+  }
+
+  function setSquare(thisSquare) {
+  	var currSquare = "square"+thisSquare;
+  	var newNum;
+
+  	var colPlace =new Array(0,1,2,3,4,0,1,2,3,4,0,1,2,3,4,0,1,2,3,4,0,1,2,3,4);
+
+  	do {
+  		newNum =(colPlace[thisSquare] * 15) + getNewNum() + 1;
+  	}
+  	while (nums[newNum]);
+
+  	nums[newNum] = true;
+  	document.getElementById(currSquare).innerHTML = newNum;
+  }
+
+  function getNewNum() {
+  	return Math.floor(Math.random() * 75);
+
+  }
+
+  function anotherCard() {
+  	for(var i=1; i<nums.length; i++) {
+  	nums[i] = false;
+  	}
+
+  	newCard();
+  }
+
+    </script>
+
+
+
+    </body>
+</html>
