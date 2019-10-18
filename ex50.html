@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>HomeWork - day 10</title>
+
+    <!--
+
+        HTML EXERCISES
+
+        1) Create a title for the page
+        2) Create a heading
+        3) Create an ordered list
+        4) Create a table with 5 columns and 4 rows
+        5) Add an image for each second cell of the first row
+        6) Merge together 2 table cells
+        7) Add a link for every image
+        8) Divide the page using a horizontal line
+        9) Create a container with a nested paragraph and a nested unordered list
+        10) Create a footer with some information about the page creator
+
+        CSS EXERCISES
+
+        11) Give a maximum width to the body and center it in the page
+        12) Set every h1 to be centered
+        13) Change the color of each link in the page
+        14) Create a class with a border
+        15) Set table to have rounded borders
+        16) Add margin between every paragraph
+        17) Create a class which change font size and boldness
+        18) Create a class to hide a content
+        19) Add a green border to each td
+        20) Add a dotted red border to each tr
+
+        JS EXERCISES
+
+        21) Given variable X = "John" and Y = "Doe", write on the console log "John <> Doe"
+        22) Create an object with properties such Name, Surname, Email
+        23) Delete Email from the previously created object
+        24) Create an array with 10 strings in it
+        25) Print in the console every string in the previous array
+        26) Create an array with 100 random numbers in it
+        27) Wrote a function to get the MAX and the MIN from the previously created array
+        28) Create an array of arrays, in which every array has 10 random numbers
+        29) Create a function that gets 2 arrays and returns the longest one
+        30) Create a function that gets 2 arrays of numbers and returns the one with the higher sum of values
+
+        DOM
+
+        31) Get element with ID "container" from the page
+        32) Get every "td" from the page
+        33) Create a cycle that prints the text inside every td of the page
+        34) Write a function to change the heading of the page
+        35) Write a function to add an extra row to the table
+        36) Write a function to add the class "test" to reach row in the table
+        37) Write a function to add a red background to every link in the page
+        38) Console log "Page loaded" when the page is correctly loaded
+        39) Write a function to add new items to a UL
+        40) Write a function to empty a list
+
+        EXTRA
+
+        41) Add an eventListener to alert when the mouse is over a link, displaying the URL
+        42) Add a button to hide every image on the page
+        43) Add a button to hide and show the table from the page
+        44) Write a function to sum every number inside the TD (if the content is numeric)
+        45) Delete the last letter from the title each time the user clicks on it
+        46) Change the a single TD backgrund color when the user clicks on it
+        47) Add a button DELETE, on click it should delete a random TD from the page
+        48) Add a pink border to a cell when the mouse is over
+        49) Write a function to add a table with 4 rows and 3 lines programmatically
+        50) Write a function to remove the table from the page
+    -->
+
+
+
+
+      <style>
+        body {
+          max-width: 1000px;
+          margin: auto;
+        }
+
+        h1 {
+          text-align: center;
+        }
+
+        a {
+          color: grey;
+        }
+
+        p {
+          margin: 20px;
+        }
+
+        table {
+          margin: 0 auto;
+          text-align: center;
+          background: #ffff91;
+          border-collapse: collapse;
+          border-style: hidden;
+          box-shadow: 0 0 0 4px;
+          width: 600px;
+          height: 400px;
+          border: 3px solid black;
+          border-radius: 6px;
+        }
+
+        td {
+          border: 1px solid green;
+        }
+
+        tr {
+          border: 2px dotted red;
+        }
+
+        .fontChanger {
+          font-size: 12px;
+          font-weight: bold;
+        }
+
+        .hiddenClass {
+            visibility: hidden;
+        }
+
+        .line {
+           position:absolute;
+           width:100%;
+           top: 50%;
+        }
+
+      </style>
+
+
+    </head>
+    <body>
+      <header>
+          <h1>Some text</h1>
+      </header>
+      <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ol>
+
+      <table>
+        <tr>
+          <th id="square0"> &nbsp;</th>
+          <td id="square1"><a href="https://strive.school">
+<img border="0" alt="strve" src="global.png" width="32" height="32"></td>
+          <td id="square2"> &nbsp;</td>
+          <td id="square3"><a href="https://strive.school">
+<img border="0" alt="strve" src="cpu.png" width="32" height="32"></td>
+        </tr>
+        <tr>
+          <th id="square6"> &nbsp;</th>
+          <td id="square7"> &nbsp;</td>
+          <td id="square8"> &nbsp;</td>
+          <td id="square9"> &nbsp;</td>
+        </tr>
+        <tr>
+          <th id="square11"> &nbsp;</th>
+          <td id="square12" colspan="2"> &nbsp;</td>
+          <td id="square13"> &nbsp;</td>
+
+        </tr>
+        <tr>
+          <th id="square16"> &nbsp;</th>
+          <td id="square17"> &nbsp;</td>
+          <td id="square18"> &nbsp;</td>
+          <td id="square19"> &nbsp;</td>
+        </tr>
+        <tr>
+          <th id="square21"> &nbsp;</th>
+          <td id="square22"> &nbsp;</td>
+          <td id="square23"> &nbsp;</td>
+          <td id="square24"> &nbsp;</td>
+        </tr>
+
+      </table>
+
+      <hr class="line">
+
+      <div class="container">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+        <ul>
+          <li>1st item</li>
+          <li>2nd item</li>
+          <li>3rd item</li>
+          <li>4th item</li>
+        </ul>
+
+      </div>
+
+      <footer>
+        <p>Page created by Vadym Bardukov</p>
+      </footer>
+
+      <script>
+
+      //21) Given variable X = "John" and Y = "Doe", write on the console log "John <> Doe"
+      var x = "John";
+      var y = "Doe"
+      var email = "test@gmail.com"
+      console.log(x + ' <> ' + y);
+
+
+      //22) Create an object with properties such Name, Surname, Email
+      var person = new Object();
+      person.name = x;
+      person.surname = y;
+      person.email = email;
+
+      //23) Delete Email from the previously created object
+      delete person.email;
+
+
+      //24) Create an array with 10 strings in it
+      var array = ["An", "array", "is", "a", "special", "variable", "which", "can", "hold", "more"];
+
+      //25) Print in the console every string in the previous array
+
+      console.log(array);
+
+      //26) Create an array with 100 random numbers in it
+
+      var arrNum = [];
+      for (var i=0, t=100; i<t; i++) {
+          arrNum.push(Math.round(Math.random() * t))
+      }
+      console.log(arrNum);
+
+
+      //27) Wrote a function to get the MAX and the MIN from the previously created array
+
+      var maxVal = Math.max.apply(Math, arrNum);
+      var minVal = Math.min.apply(Math, arrNum);
+
+      console.log(maxVal);
+      console.log(minVal);
+
+
+      //28) Create an array of arrays, in which every array has 10 random numbers
+
+
+      var outerArray = [];
+
+      function fillArray(arr, producer, length) {
+        for (var i = 0; i < length; i++) {
+          arr[i] = producer();
+        }
+        return arr;
+      }
+
+      function createInnerArray() {
+        return fillArray([], Math.random, 10);
+      }
+
+      fillArray(outerArray, createInnerArray, 10);
+
+      console.log(outerArray);
+
+
+      //29) Create a function that gets 2 arrays and returns the longest one
+
+
+      var Array2 = [ "1", "2", "3", "4", "5" ];
+      var Array1 = ["1","2","3"];
+
+      var result = [];
+
+      function compare(arr1,arr2) {
+        if (arr1.length > arr2.length) {
+          return "1st array bigger than 2nd";
+        }
+        else if (arr1.length < arr2.length) {
+          return "2nd array bigger than 1st";
+        }
+        else {
+          return "they have the same length";
+        }
+      }
+
+      console.log(compare(Array1, Array2));
+
+
+      //30) Create a function that gets 2 arrays of numbers and returns the one with the higher sum of values
+
+
+      function biggerSum(arr1, arr2) {
+        function add(accumulator, a) {
+          return accumulator + a;
+        }
+
+        if (arr1.reduce(add,0) > arr2.reduce(add,0)) {
+          return "1st array have bigger sum than 2nd";
+        }
+        else if (arr1.reduce(add,0) < arr2.reduce(add,0)) {
+          return "2nd array have bigger sum than 1st";
+        }
+        else {
+          return "they have the same sum";
+        }
+      }
+
+      console.log(biggerSum(Array2, Array1));
+
+      //31) Get element with ID "container" from the page
+      var container = document.getElementById('container');
+      //32) Get every "td" from the page
+      var td = document.querySelector("td");
+      //33) Create a cycle that prints the text inside every td of the page
+      //fail =(
+
+      //34) Write a function to change the heading of the page
+      function changeH1 (text) {
+        document.getElementsByTagName("H1")[0].innerHTML = text;
+      }
+      changeH1("lol");
+
+      </script>
+
+    </body>
+</html>
